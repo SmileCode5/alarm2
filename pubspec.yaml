@@ -26,7 +26,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.gdelataillade.alarm.alarm
+        package: com.gdelataillade.alarm2.alarm2
         pluginClass: AlarmPlugin
       ios:
         pluginClass: AlarmPlugin

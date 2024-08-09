@@ -7,10 +7,10 @@ import 'package:flutter/services.dart';
 /// Uses method channel to interact with the native platform.
 class AndroidAlarm {
   /// Method channel for the alarm operations.
-  static const platform = MethodChannel('com.gdelataillade.alarm/alarm');
+  static const platform = MethodChannel('com.gdelataillade.alarm2/alarm2');
 
   /// Event channel for the alarm events.
-  static const eventChannel = EventChannel('com.gdelataillade.alarm/events');
+  static const eventChannel = EventChannel('com.gdelataillade.alarm2/events');
 
   /// Whether there are other alarms set.
   static bool get hasOtherAlarms => AlarmStorage.getSavedAlarms().length > 1;

@@ -48,7 +48,7 @@ Inside the <application> tag of your `AndroidManifest.xml`, add the following de
 ```xml
 <application>
   [...]
-  <service android:name="com.gdelataillade.alarm.services.NotificationOnKillService" />
+  <service android:name="com.gdelataillade.alarm2.services.NotificationOnKillService" />
   [...]
 </application>
 ```

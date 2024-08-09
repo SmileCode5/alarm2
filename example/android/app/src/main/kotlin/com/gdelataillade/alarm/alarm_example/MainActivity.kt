@@ -1,4 +1,4 @@
-package com.gdelataillade.alarm2.alarm_example
+package com.gdelataillade.alarm2.alarm2_example
 
 import io.flutter.embedding.android.FlutterActivity
 

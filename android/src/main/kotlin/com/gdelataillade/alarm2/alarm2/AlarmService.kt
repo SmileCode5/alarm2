@@ -1,8 +1,8 @@
 package com.gdelataillade.alarm2.alarm2
 
-import com.gdelataillade.alarm.services.AudioService
-import com.gdelataillade.alarm.services.VibrationService
-import com.gdelataillade.alarm.services.VolumeService
+import com.gdelataillade.alarm2.services.AudioService
+import com.gdelataillade.alarm2.services.VibrationService
+import com.gdelataillade.alarm2.services.VolumeService
 
 import android.app.Service
 import android.app.PendingIntent

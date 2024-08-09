@@ -19,7 +19,7 @@ class NotificationOnKillService : Service() {
     private lateinit var title: String
     private lateinit var body: String
     private val NOTIFICATION_ID = 88888
-    private val CHANNEL_ID = "com.gdelataillade.alarm.alarm_channel"
+    private val CHANNEL_ID = "com.gdelataillade.alarm2.alarm_channel"
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         title = intent?.getStringExtra("title") ?: "Your alarms could not ring"

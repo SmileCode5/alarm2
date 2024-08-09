@@ -1,4 +1,4 @@
-package com.gdelataillade.alarm.alarm2
+package com.gdelataillade.alarm2.alarm2
 
 import com.gdelataillade.alarm2.services.NotificationOnKillService
 
@@ -31,10 +31,10 @@ class AlarmPlugin: FlutterPlugin, MethodCallHandler {
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         context = flutterPluginBinding.applicationContext
 
-        methodChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "com.gdelataillade.alarm/alarm")
+        methodChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "com.gdelataillade.alarm2/alarm2")
         methodChannel.setMethodCallHandler(this)
 
-        eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "com.gdelataillade.alarm/events")
+        eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "com.gdelataillade.alarm2/events")
         eventChannel.setStreamHandler(object : EventChannel.StreamHandler {
             override fun onListen(arguments: Any?, events: EventChannel.EventSink) {
                 eventSink = events

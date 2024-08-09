@@ -27,7 +27,7 @@ public class SwiftAlarmPlugin: NSObject, FlutterPlugin {
     private var alarms: [Int: AlarmConfiguration] = [:]
 
     private var silentAudioPlayer: AVAudioPlayer?
-    private let resourceAccessQueue = DispatchQueue(label: "com.gdelataillade.alarm.resourceAccessQueue")
+    private let resourceAccessQueue = DispatchQueue(label: "com.gdelataillade.alarm2.resourceAccessQueue")
 
     private var notifOnKillEnabled: Bool!
     private var notificationTitleOnKill: String!
