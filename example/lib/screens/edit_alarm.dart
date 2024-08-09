@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:alarm/alarm.dart';
+import 'package:alarm2/alarm2.dart';
 import 'package:flutter/material.dart';
 
 class ExampleAlarmEditScreen extends StatefulWidget {
@@ -105,14 +105,14 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
   void saveAlarm() {
     if (loading) return;
     setState(() => loading = true);
-    Alarm.set(alarmSettings: buildAlarmSettings()).then((res) {
+    Alarm2.set(alarmSettings: buildAlarmSettings()).then((res) {
       if (res) Navigator.pop(context, true);
       setState(() => loading = false);
     });
   }
 
   void deleteAlarm() {
-    Alarm.stop(widget.alarmSettings!.id).then((res) {
+    Alarm2.stop(widget.alarmSettings!.id).then((res) {
       if (res) Navigator.pop(context, true);
     });
   }

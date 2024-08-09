@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:alarm/alarm.dart';
-import 'package:alarm_example/screens/edit_alarm.dart';
-import 'package:alarm_example/screens/ring.dart';
-import 'package:alarm_example/screens/shortcut_button.dart';
-import 'package:alarm_example/widgets/tile.dart';
+import 'package:alarm2/alarm2.dart';
+import 'package:alarm2_example/screens/edit_alarm.dart';
+import 'package:alarm2_example/screens/ring.dart';
+import 'package:alarm2_example/screens/shortcut_button.dart';
+import 'package:alarm2_example/widgets/tile.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -23,17 +23,17 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
   @override
   void initState() {
     super.initState();
-    if (Alarm.android) {
+    if (Alarm2.android) {
       checkAndroidNotificationPermission();
       checkAndroidScheduleExactAlarmPermission();
     }
     loadAlarms();
-    subscription ??= Alarm.ringStream.stream.listen(navigateToRingScreen);
+    subscription ??= Alarm2.ringStream.stream.listen(navigateToRingScreen);
   }
 
   void loadAlarms() {
     setState(() {
-      alarms = Alarm.getAlarms();
+      alarms = Alarm2.getAlarms();
       alarms.sort((a, b) => a.dateTime.isBefore(b.dateTime) ? 0 : 1);
     });
   }
@@ -125,7 +125,7 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
                     ).format(context),
                     onPressed: () => navigateToAlarmScreen(alarms[index]),
                     onDismissed: () {
-                      Alarm.stop(alarms[index].id).then((_) => loadAlarms());
+                      Alarm2.stop(alarms[index].id).then((_) => loadAlarms());
                     },
                   );
                 },

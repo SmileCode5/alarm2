@@ -1,4 +1,4 @@
-package com.gdelataillade.alarm.alarm
+package com.gdelataillade.alarm2.alarm2
 
 import com.gdelataillade.alarm.services.AudioService
 import com.gdelataillade.alarm.services.VibrationService

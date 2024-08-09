@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:alarm/alarm.dart';
+import 'package:alarm2/alarm2.dart';
 import 'package:flutter/material.dart';
 
 class ExampleAlarmHomeShortcutButton extends StatefulWidget {
@@ -42,7 +42,7 @@ class _ExampleAlarmHomeShortcutButtonState
       enableNotificationOnKill: Platform.isIOS,
     );
 
-    await Alarm.set(alarmSettings: alarmSettings);
+    await Alarm2.set(alarmSettings: alarmSettings);
 
     widget.refreshAlarms();
   }

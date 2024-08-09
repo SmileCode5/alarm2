@@ -14,7 +14,7 @@
         android:label="alarm_example"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <service android:name="com.gdelataillade.alarm.services.NotificationOnKillService" />
+        <service android:name="com.gdelataillade.alarm2.services.NotificationOnKillService" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

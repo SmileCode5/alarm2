@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:alarm/model/alarm_settings.dart';
+import 'package:alarm2/model/alarm_settings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Class that handles the local storage of the alarm info.

@@ -1,4 +1,4 @@
-import 'package:alarm/alarm.dart';
+import 'package:alarm2/alarm2.dart';
 import 'package:flutter/material.dart';
 
 class ExampleAlarmRingScreen extends StatelessWidget {
@@ -24,7 +24,7 @@ class ExampleAlarmRingScreen extends StatelessWidget {
                 RawMaterialButton(
                   onPressed: () {
                     final now = DateTime.now();
-                    Alarm.set(
+                    Alarm2.set(
                       alarmSettings: alarmSettings.copyWith(
                         dateTime: DateTime(
                           now.year,
@@ -43,7 +43,7 @@ class ExampleAlarmRingScreen extends StatelessWidget {
                 ),
                 RawMaterialButton(
                   onPressed: () {
-                    Alarm.stop(alarmSettings.id)
+                    Alarm2.stop(alarmSettings.id)
                         .then((_) => Navigator.pop(context));
                   },
                   child: Text(

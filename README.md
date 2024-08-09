@@ -3,14 +3,16 @@
 ![Pub Points](https://img.shields.io/pub/points/alarm)
 ![Pub Popularity](https://img.shields.io/pub/popularity/alarm)
 
-[![alarm](https://github.com/gdelataillade/alarm/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/gdelataillade/alarm/actions/workflows/main.yml)
+[![alarm2](https://github.com/SmileCode5/alarm2/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/SmileCode5/alarm2/actions/workflows/main.yml)
 [![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 [![GitHub Sponsor](https://img.shields.io/github/sponsors/gdelataillade?label=Sponsor&logo=GitHub)](https://github.com/sponsors/gdelataillade)
 
 🏆 Winner of the [2023 OnePub Community Choice Awards](https://onepub.dev/Competition).
 
-# Alarm plugin for iOS and Android
+# Alarm2 plugin for iOS and Android
 
+This just clone alarm (https://pub.dev/packages/alarm) but build with ext.kotlin_version = '1.9.24' (latest) because the original was build with ext.kotlin_version = '1.6.10' (to old and problem with my project).
+Sorry gdelataillade.me
 This plugin offers a straightforward interface to set and cancel alarms on both iOS and Android devices. Using native code, it handles audio playback, vibrations, system volume, and notifications seamlessly.
 
 ## 🔧 Installation steps
@@ -24,12 +26,12 @@ Please carefully follow these installation steps. They have been updated for plu
 
 Add to your pubspec.yaml:
 ```Bash
-flutter pub add alarm
+flutter pub add alarm2
 ```
 
-First, you have to initialize the Alarm service in your `main` function:
+First, you have to initialize the alarm service in your `main` function:
 ```Dart
-await Alarm.init()
+await Alarm2.init()
 ```
 
 Then, you have to define your alarm settings:
@@ -50,7 +52,7 @@ final alarmSettings = AlarmSettings(
 
 And finally set the alarm:
 ```Dart
-await Alarm.set(alarmSettings: alarmSettings)
+await Alarm2.set(alarmSettings: alarmSettings)
 ```
 
 Property |   Type     | Description
@@ -71,27 +73,27 @@ Note that if `notificationTitle` and `notificationBody` are both empty, iOS will
 
 If you enabled `enableNotificationOnKill`, you can choose your own notification title and body by using this method before setting your alarms:
 ```Dart
-await Alarm.setNotificationOnAppKillContent(title, body)
+await Alarm2.setNotificationOnAppKillContent(title, body)
 ```
 
 This is how to stop/cancel your alarm:
 ```Dart
-await Alarm.stop(id)
+await Alarm2.stop(id)
 ```
 
 This is how to run some code when alarm starts ringing. I implemented it as a stream so even if your app was previously killed, your custom callback can still be triggered.
 ```Dart
-Alarm.ringStream.stream.listen((_) => yourOnRingCallback());
+Alarm2.ringStream.instance.stream.listen((_) => yourOnRingCallback());
 ```
 
 To avoid unexpected behaviors, if you set an alarm for the same time, down to the second, as an existing one, the new alarm will replace the existing one.
 
 ## 📱 Example app
 
-Don't hesitate to check out the [example's code](https://github.com/gdelataillade/alarm/tree/main/example), and take a look at the app:
+Don't hesitate to check out the [example's code](https://github.com/SmileCode5/alarm2/tree/main/example), and take a look at the app:
 
-![home](https://github.com/gdelataillade/alarm/assets/32983806/501f5fc5-02f4-4a8b-b662-4cbf8f1b2b4c)
-![edit](https://github.com/gdelataillade/alarm/assets/32983806/0cb3e9e1-0efd-4112-b6b7-d9d474d56d10)
+![home](https://github.com/SmileCode5/alarm2/assets/32983806/501f5fc5-02f4-4a8b-b662-4cbf8f1b2b4c)
+![edit](https://github.com/SmileCode5/alarm2/assets/32983806/0cb3e9e1-0efd-4112-b6b7-d9d474d56d10)
 
 
 ## ⏰ Alarm behaviour
@@ -144,10 +146,10 @@ Related issue [here](https://github.com/gdelataillade/alarm/issues/47#issuecomme
 
 ### Why does my app crash on iOS?
 
-Crashes such as `EXC_BAD_ACCESS KERN_INVALID_ADDRESS` occur if `Alarm.set` and `Alarm.stop` methods are called concurrently, as they both modify shared resources. To prevent this, ensure each method call is completed before starting the next by using the `await` keyword in Dart:
+Crashes such as `EXC_BAD_ACCESS KERN_INVALID_ADDRESS` occur if `Alarm2.set` and `Alarm2.stop` methods are called concurrently, as they both modify shared resources. To prevent this, ensure each method call is completed before starting the next by using the `await` keyword in Dart:
 ```
-await Alarm.set
-await Alarm.stop
+await Alarm2.set
+await Alarm2.stop
 ```
 This approach ensures safe and exclusive access to shared resources, preventing crashes.
 

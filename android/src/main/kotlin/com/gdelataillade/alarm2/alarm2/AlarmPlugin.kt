@@ -1,6 +1,6 @@
-package com.gdelataillade.alarm.alarm
+package com.gdelataillade.alarm.alarm2
 
-import com.gdelataillade.alarm.services.NotificationOnKillService
+import com.gdelataillade.alarm2.services.NotificationOnKillService
 
 import android.os.Build
 import android.os.Handler

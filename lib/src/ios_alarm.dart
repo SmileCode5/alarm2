@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:alarm/alarm.dart';
-import 'package:alarm/service/alarm_storage.dart';
-import 'package:alarm/utils/alarm_exception.dart';
+import 'package:alarm2/alarm2.dart';
+import 'package:alarm2/service/alarm_storage.dart';
+import 'package:alarm2/utils/alarm_exception.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_fgbg/flutter_fgbg.dart';
 
@@ -60,7 +60,7 @@ class IOSAlarm {
 
       if (!res) return false;
     } catch (e) {
-      await Alarm.stop(id);
+      await Alarm2.stop(id);
       throw AlarmException(e.toString());
     }
 
@@ -126,7 +126,7 @@ class IOSAlarm {
     required void Function() onForeground,
     required void Function() onBackground,
   }) {
-    fgbgSubscriptions[id] = FGBGEvents.stream.listen((event) {
+    fgbgSubscriptions[id] = FGBGEvents.instance.stream.listen((event) {
       if (event == FGBGType.foreground) onForeground();
       if (event == FGBGType.background) onBackground();
     });

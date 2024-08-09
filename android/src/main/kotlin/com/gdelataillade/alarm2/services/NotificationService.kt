@@ -1,4 +1,4 @@
-package com.gdelataillade.alarm.alarm
+package com.gdelataillade.alarm2.alarm
 
 import android.app.Notification
 import android.app.NotificationChannel

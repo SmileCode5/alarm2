@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:alarm/alarm.dart';
-import 'package:alarm/service/alarm_storage.dart';
-import 'package:alarm/utils/alarm_exception.dart';
+import 'package:alarm2/alarm2.dart';
+import 'package:alarm2/service/alarm_storage.dart';
+import 'package:alarm2/utils/alarm_exception.dart';
 import 'package:flutter/services.dart';
 
 /// Uses method channel to interact with the native platform.
@@ -25,8 +25,8 @@ class AndroidAlarm {
         try {
           final eventMap = Map<String, dynamic>.from(event as Map);
           final id = eventMap['id'] as int;
-          final settings = Alarm.getAlarm(id);
-          if (settings != null) Alarm.ringStream.add(settings);
+          final settings = Alarm2.getAlarm(id);
+          if (settings != null) Alarm2.ringStream.add(settings);
         } catch (e) {
           alarmPrint('Error receiving alarm events: $e');
         }

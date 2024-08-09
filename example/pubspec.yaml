@@ -1,4 +1,4 @@
-name: alarm_example
+name: alarm2_example
 description: Demonstrates how to use the alarm plugin.
 version: 0.1.2
 
@@ -8,7 +8,7 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  alarm:
+  alarm2:
     path: ../
   cupertino_icons: ^1.0.8
   flutter:

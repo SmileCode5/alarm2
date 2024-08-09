@@ -1,4 +1,4 @@
-package com.gdelataillade.alarm.alarm
+package com.gdelataillade.alarm2.alarm2
 
 import android.app.PendingIntent
 import android.content.BroadcastReceiver

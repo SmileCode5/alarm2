@@ -2,21 +2,21 @@
 
 import 'dart:async';
 
-import 'package:alarm/model/alarm_settings.dart';
-import 'package:alarm/service/alarm_storage.dart';
-import 'package:alarm/src/android_alarm.dart';
-import 'package:alarm/src/ios_alarm.dart';
-import 'package:alarm/utils/alarm_exception.dart';
-import 'package:alarm/utils/extensions.dart';
+import 'package:alarm2/model/alarm_settings.dart';
+import 'package:alarm2/service/alarm_storage.dart';
+import 'package:alarm2/src/android_alarm.dart';
+import 'package:alarm2/src/ios_alarm.dart';
+import 'package:alarm2/utils/alarm_exception.dart';
+import 'package:alarm2/utils/extensions.dart';
 import 'package:flutter/foundation.dart';
 
-export 'package:alarm/model/alarm_settings.dart';
+export 'package:alarm2/model/alarm_settings.dart';
 
 /// Custom print function designed for Alarm plugin.
 DebugPrintCallback alarmPrint = debugPrintThrottled;
 
 /// Class that handles the alarm.
-class Alarm {
+class Alarm2 {
   /// Whether it's iOS device.
   static bool get iOS => defaultTargetPlatform == TargetPlatform.iOS;
 
@@ -55,7 +55,7 @@ class Alarm {
       if (alarm.dateTime.isAfter(now)) {
         await set(alarmSettings: alarm);
       } else {
-        final isRinging = await Alarm.isRinging(alarm.id);
+        final isRinging = await Alarm2.isRinging(alarm.id);
         isRinging ? ringStream.add(alarm) : await stop(alarm.id);
       }
     }
@@ -68,10 +68,10 @@ class Alarm {
   static Future<bool> set({required AlarmSettings alarmSettings}) async {
     alarmSettingsValidation(alarmSettings);
 
-    for (final alarm in Alarm.getAlarms()) {
+    for (final alarm in Alarm2.getAlarms()) {
       if (alarm.id == alarmSettings.id ||
           alarm.dateTime.isSameSecond(alarmSettings.dateTime)) {
-        await Alarm.stop(alarm.id);
+        await Alarm2.stop(alarm.id);
       }
     }
 
