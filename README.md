@@ -11,8 +11,11 @@
 
 # Alarm2 plugin for iOS and Android
 
-This just clone alarm (https://pub.dev/packages/alarm) but build with ext.kotlin_version = '1.9.24' (latest) because the original was build with ext.kotlin_version = '1.6.10' (to old and problem with my project).
-Sorry gdelataillade.me
+### This just clone alarm (https://pub.dev/packages/alarm) but build with ext.kotlin_version = '1.9.24' (latest) because the original was build with ext.kotlin_version = '1.6.10' (to old and problem with my project).
+
+### Sorry gdelataillade.me
+
+
 This plugin offers a straightforward interface to set and cancel alarms on both iOS and Android devices. Using native code, it handles audio playback, vibrations, system volume, and notifications seamlessly.
 
 ## 🔧 Installation steps

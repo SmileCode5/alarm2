@@ -1,6 +1,6 @@
 name: alarm2
 description: A simple Flutter alarm manager plugin for both iOS and Android.
-version: 3.1.51
+version: 3.1.53
 homepage: https://github.com/gdelataillade/alarm
 
 environment:
